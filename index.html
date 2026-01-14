@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>JAMES MURIITHI | Hacker Portfolio</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;600&display=swap');
+
+:root {
+  --bg: #020204;
+  --panel: #0b0f0a;
+  --green: #00ff88;
+  --green-soft: rgba(0,255,136,0.15);
+  --text: #d1fae5;
+  --muted: #6ee7b7;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: radial-gradient(circle at top, #02110a, var(--bg));
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Scanlines */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.02),
+    rgba(255,255,255,0.02) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 5rem 1.5rem 4rem;
+}
+
+header h1 {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2.8rem;
+  color: var(--green);
+  text-shadow: 0 0 18px var(--green-soft);
+}
+
+header h1::after {
+  content: "_";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+header p {
+  max-width: 650px;
+  margin: 1rem auto 2rem;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  border: 1px solid var(--green);
+  color: var(--green);
+  font-family: 'JetBrains Mono', monospace;
+  text-decoration: none;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 15px var(--green-soft);
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background: var(--green);
+  color: #02110a;
+  box-shadow: 0 0 35px var(--green);
+}
+
+/* SECTIONS */
+section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 3.5rem 1.5rem;
+}
+
+section h2 {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--green);
+  margin-bottom: 1.5rem;
+  font-size: 1.6rem;
+  border-left: 4px solid var(--green);
+  padding-left: 0.8rem;
+}
+
+p {
+  font-size: 0.95rem;
+}
+
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: linear-gradient(180deg, #020204, var(--panel));
+  border: 1px solid var(--green-soft);
+  border-radius: 0.8rem;
+  padding: 1.6rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 40px var(--green-soft);
+}
+
+.card h3 {
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--green);
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  color: #a7f3d0;
+}
+
+/* SKILLS */
+.skills {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.skills li {
+  font-family: 'JetBrains Mono', monospace;
+  border: 1px solid var(--green);
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: var(--green);
+  background: rgba(0,255,136,0.05);
+}
+
+/* CONTACT */
+a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 2.2rem 1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  color: #6ee7b7;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>JAMES_MURIITHI</h1>
+  <p>
+    Cybersecurity Researcher • Web3 Developer • Offensive Security  
+    <br />Breaking systems to make them stronger.
+  </p>
+  <a href="#projects" class="btn">./view_projects</a>
+</header>
+
+<section id="about">
+<h2>About</h2>
+<p>
+Computer Science Scholar at Murang'a University of Technology with a focus on
+Cybersecurity, Penetration Testing, and Web3 security research.
+<br /><br />
+Cisco-certified, red-team oriented, and driven by adversarial thinking.
+I refine exploit logic, network attacks, and system analysis daily.
+</p>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<ul class="skills">
+<li>Python</li>
+<li>JavaScript</li>
+<li>Linux</li>
+<li>Networking</li>
+<li>Penetration Testing</li>
+<li>Web3 Security</li>
+</ul>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid">
+
+<div class="card">
+<h3>WIFI_BRUTER</h3>
+<p>
+Educational brute-force research tool built to analyze wordlist efficiency.
+Achieved 97.97% success in controlled environments.
+</p>
+</div>
+
+<div class="card">
+<h3>TIZEN OS REMOTE</h3>
+<p>
+Network-based remote control for Samsung TVs via Tizen APIs.
+Foundation for universal IoT remote systems.
+</p>
+</div>
+
+<div class="card">
+<h3>JS GTA ENGINE</h3>
+<p>
+A JavaScript-driven open-world engine inspired by GTA.
+Template released for future refinement and expansion.
+</p>
+</div>
+
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p>
+Email: <a href="mailto:jimmy443ndirangumuriithi@gmail.com">jimmy443ndirangumuriithi@gmail.com</a><br />
+GitHub: <a href="https://github.com/JimmyJames-443">github.com/JimmyJames-443</a><br />
+Phone: +254743233373
+</p>
+</section>
+
+<footer>
+© <span id="year"></span> JAMES MURIITHI — root@portfolio
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
